@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <div class="jumbotron">
+      <strong><h1 id = "jumbotron"> Gift Generator </h1><strong>
+    </div>
+    <div class = "container-fluid">
     <% if logged_in? %>
       <ul class="nav nav-tabs">
         <li class="active"><a href="#">Home</a></li>
@@ -17,7 +21,6 @@
         <li><a href="#">Menu 3</a></li>
       </ul>
     <% end %>
-    <div class = "container-fluid">
       <%= yield %>
     </div>
   </body>
