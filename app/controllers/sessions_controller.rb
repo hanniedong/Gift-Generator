@@ -1,23 +1,31 @@
 class SessionsController < ApplicationController
-  include SessionsHelper 
+  include SessionsHelper
 
-  def new
+  def login
   end
 
   def create
-    @user = User.find_by(email: params[:sessions][:email]) 
-    if @user && @user.authenticate(params[:sessions][:password])
-      login
-      redirect_to '/'
-    else
-      @errors = ['Invalid email/password']
-      render 'new'
+    @user = User.find_by(email: session_params[:email])
+
+    if @user 
+      if @user.authenticate(session_params[:password])
+      else
+        @errors = ['email or password is incorrect']
+        render 'login'
+      end
+    else 
+      @errors = ['Please register to access this site.']
+      render 'login'
     end
   end
 
-  def destroy
-    logout
+  def logout
+    session[:user_id] = nil
     redirect_to '/'
   end
-
+  
+  private 
+    def session_params
+      params.require(:session).permit(:email, :password)
+    end
 end
