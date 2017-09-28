@@ -1,0 +1,17 @@
+<div class = "page-header">
+  <h2> Gift Ideas for  <%= @receiver.first_name %> </h2>
+</div>
+
+<ul class="list-group">
+  <% @gifts.each do |gift| %>
+    <li class="list-group-item">
+      <h3> <%= gift.title %> </h3>
+      <h4> Cost: $<%= gift.cost %> </h4> 
+      <h4> Description: <%= gift.description %> </h4>
+    </li>
+  <% end %>
+</ul>
+
+<div class = 'btn-group'>
+  <%= link_to 'Back', root_path, :class => "btn btn-warning btn-lg"  %>
+</div>
