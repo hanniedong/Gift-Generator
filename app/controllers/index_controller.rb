@@ -3,10 +3,14 @@ class IndexController < ApplicationController
 
   def index 
     if logged_in?
-      @user = User.find(session[:user_id])
+      @user = current_user
     else
       redirect_to login_path
     end 
   end 
 
+  def show 
+    if logged_in?
+    end
+  end
 end

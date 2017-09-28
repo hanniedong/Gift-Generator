@@ -3,7 +3,7 @@
 </div>
 
 <div class="row">
-  <dh><h4> Gifts For: </h4></dh>
+  <dh><h4> Gift Ideas For: </h4></dh>
 
   <% @user.receivers.each do |receiver| %>
     <div class="list-group-item col-sm-3"><%= link_to receiver.first_name, receiver_path(receiver)%></div>
