@@ -3,8 +3,6 @@ require 'faker'
 User.delete_all
 Receiver.delete_all
 Gift.delete_all
-Round.delete_all
-Team.delete_all
 
 
   User.create!({
@@ -27,18 +25,17 @@ Team.delete_all
   })
 
   Gift.create!({
-    title: "Watch"
-    cost: 200
-    description: "Beautiful Michael Kors watch" 
-    giver_id: 1
+    title: "Watch",
+    cost: 200,
+    description: "Beautiful Michael Kors watch" ,
+    giver_id: 1,
     receiver_id: 1
   })
     
   Gift.create!({
-    title: "Apple Watch"
-    cost: 400
-    description: "Good watch for boyfriend" 
-    relationship: "boyfriend"
-    giver_id: 1
+    title: "Apple Watch",
+    cost: 400,
+    description: "Good watch for boyfriend" ,
+    giver_id: 1,
     receiver_id: 2
   })
