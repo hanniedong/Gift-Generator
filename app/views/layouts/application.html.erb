@@ -9,19 +9,21 @@
   </head>
 
   <body>
-    <div class="jumbotron">
-      <strong><h1 id = "jumbotron"> Gift Generator </h1><strong>
-    </div>
-    <div class = "container-fluid">
     <% if logged_in? %>
       <ul class="nav nav-tabs">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Menu 1</a></li>
-        <li><a href="#">Menu 2</a></li>
-        <li><a href="#">Menu 3</a></li>
+        <li role="presentation" class="active"> <%= link_to 'Home' %> </li>
+        <li role="presentation"> <%= link_to "Logout", logout_path, method: :delete %></a></li>
       </ul>
     <% end %>
-      <%= yield %>
+    <div class="jumbotron">
+      <strong><h1 id = "jumbotron-header"> Gift Generator </h1></strong>
+      <p id = "jumbotron-body"><i> Ever find yourself having trouble thinking of good gifts? Enter various gift ideas for certain people when you think of them on this site. When its time to give them a gift, the generator will randomly pick one. </i><p>
+    </div>
+
+    <div class = "container-fluid">
+      <div class = "margin-left">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

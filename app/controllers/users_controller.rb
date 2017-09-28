@@ -10,7 +10,9 @@ class UsersController < ApplicationController
     @user.password = params[:user][:password]
     if @user.save
       login_user
+      redirect_to index_index_path
     else 
+      @errors
       render 'new'
     end
   end 

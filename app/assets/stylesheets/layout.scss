@@ -2,10 +2,28 @@ h1{
   margin-left: 5%
 }
 
-.jumbotron{
-  background-color: #ffd88f;
+.margin-left{
+  margin-left: 5%
 }
 
-#jumbotron{
+.row{
+  margin-left: 1%
+}
+
+.jumbotron{
+  background-color: #ffb733;
+}
+
+.errors{
+  color: red;
+}
+
+#jumbotron-header{
   color: white
+}
+
+#jumbotron-body{
+  color: white;
+  margin-left: 5%;
+  margin-right: 5%
 }

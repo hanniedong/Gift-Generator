@@ -9,6 +9,8 @@ class SessionsController < ApplicationController
 
     if @user 
       if @user.authenticate(session_params[:password])
+        login_user
+        redirect_to index_index_path
       else
         @errors = ['email or password is incorrect']
         render 'login'
