@@ -1,24 +1,9 @@
-# README
+# Gift Idea Generator 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: ruby 2.4.1
 
-Things you may want to cover:
+Ever find yourself having trouble thinking of good gifts? Enter various gift ideas for certain people when you think of them on this site. When its time to give them a gift, the generator will randomly pick one.
 
-* Ruby version
+[![image](https://github.com/hanniedong/Gift-Generator/blob/development-branch/app/assets/images/Screen%20Shot%202017-09-29%20at%2011.36.26%20AM.png)](#features)
+User can view photo gallery and upload photos.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
