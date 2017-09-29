@@ -2,6 +2,9 @@
   <h2> Welcome, <%= @user.first_name %> </h2>
 </div>
 
+<div class= "padding">
+  <%= link_to 'Create New Receiver', new_receiver_path, :class => "btn btn-warning btn-md"  %>
+</div>
 <div class="row">
   <dh><h4> Gift Ideas For: </h4></dh>
 

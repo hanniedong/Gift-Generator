@@ -1,6 +1,19 @@
 class ReceiversController < ApplicationController
   include SessionsHelper
 
+  def new 
+    @receiver = Receiver.new
+  end 
+
+  def create
+    @receiver = Receiver.create(receiver_params)
+    if @receiver.save
+      redirect_to index_index_path
+    else 
+      render 'new'
+    end
+  end
+
   def show
     @receiver = Receiver.find(params[:id])
     if logged_in? && Gift.find_by(receiver_id: @receiver.id).giver_id == current_user.id
@@ -10,4 +23,10 @@ class ReceiversController < ApplicationController
     end 
   end 
 
-end
+  private 
+
+  def receiver_params
+    params.require(:receiver).permit(giftss_attributes: [:id, :name, :_destroy])
+  end
+
+end 
