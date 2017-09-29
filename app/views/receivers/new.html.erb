@@ -1,0 +1,15 @@
+<h1> Add a new receiver! </h1>
+
+<%= bootstrap_form_for(@receiver, layout: :horizontal, label_col: "col-sm-1", control_col: "col-sm-4") do |f| %>
+    <%= f.text_field :first_name %>
+    <%= f.text_field :last_name %>
+    <%= f.text_field :relationship %>
+    <%= f.hidden_field :giver_id, :value => session[:user_id] %>
+    <%= f.form_group do %>
+      <%= f.submit "Add Receiver" %>
+    <% end %>
+<% end %>
+
+<div class = "btn-group">
+  <%= link_to 'Back', root_path, :class => "btn btn-primary"  %>
+</div>

@@ -15,13 +15,15 @@ Gift.delete_all
   Receiver.create!({
     first_name: Faker::Name.name,
     last_name: Faker::Name.name,
-    relationship: "mom"
+    relationship: "mom",
+    giver_id: 1
   })
 
   Receiver.create!({
     first_name: Faker::Name.name,
     last_name: Faker::Name.name,
-    relationship: "boyfriend"
+    relationship: "boyfriend",
+    giver_id: 1
   })
 
   Gift.create!({

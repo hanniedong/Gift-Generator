@@ -4,6 +4,7 @@ class CreateReceivers < ActiveRecord::Migration[5.1]
       t.string :first_name
       t.string :last_name
       t.string :relationship
+      t.integer :giver_id
       t.timestamps
     end
   end

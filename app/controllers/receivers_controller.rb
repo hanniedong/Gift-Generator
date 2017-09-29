@@ -26,7 +26,7 @@ class ReceiversController < ApplicationController
   private 
 
   def receiver_params
-    params.require(:receiver).permit(giftss_attributes: [:id, :name, :_destroy])
+    params.require(:receiver).permit(:first_name, :last_name, :relationship, :giver_id)
   end
 
 end 
