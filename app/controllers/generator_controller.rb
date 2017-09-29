@@ -1,9 +1,11 @@
 class GeneratorController < ApplicationController
   include SessionsHelper 
-  
+
   def generate
     if logged_in?
-      @user = current_user
+      @gifts = Receiver.find(generator_params[:receiver]).gifts
+      @gift = @gifts.sample
+      render 'index/index'
     else
       redirect_to login_path
     end 
@@ -11,7 +13,7 @@ class GeneratorController < ApplicationController
 
   private
 
-  def generate_params
+  def generator_params
     params.require(:generator).permit(:receiver)
   end
 
