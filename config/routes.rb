@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   resources :users, only: [:index, :new, :create, :show]
-  resources :gifts, only: [:index, :new, :create, :show]
   resources :index, only: [:index]
-  resources :receivers
+  resources :receivers do 
+    resources :gifts 
+  end 
 
   get '/login' => 'sessions#login'
   post '/login' => 'sessions#create'
