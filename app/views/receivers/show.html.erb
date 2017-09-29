@@ -10,7 +10,9 @@
       <h4> <%= gift.title %> </h4>
       <p> Cost: $<%= gift.cost %> </p> 
       <p> Description: <%= gift.description %> </p>
-      <p> <%= link_to "link", gift.link %> </p>
+      <% if gift.link != "" %>
+        <p> <%= link_to "link", gift.link %> </p>
+      <% end %>
     </li>
   <% end %>
 </ul>
