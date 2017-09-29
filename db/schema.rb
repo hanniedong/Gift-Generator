@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170928200034) do
     t.string "title"
     t.integer "cost"
     t.text "description"
+    t.string "link"
     t.integer "receiver_id"
     t.integer "giver_id"
     t.datetime "created_at", null: false
