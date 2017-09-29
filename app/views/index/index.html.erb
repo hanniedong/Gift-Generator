@@ -2,15 +2,28 @@
   <h2> Welcome, <%= @user.first_name %> </h2>
 </div>
 
-<div class= "padding">
-  <%= link_to 'Create New Receiver', new_receiver_path, :class => "btn btn-warning btn-md"  %>
+
+<div class="well well-lg">
+  <h3> Gift Idea Generator </h3>
+  <%= bootstrap_form_for(:generator, url: generate_path) do |f| %>
+    <%= f.select :receiver, options_from_collection_for_select(Receiver.all, :id, :first_name), { class: "selectpicker" } %>
+    <%= f.form_group do %>
+      <%= f.submit "Generate!" %>
+    <% end %>
+  <% end %>
 </div>
+
+
 <div class="row">
   <dh><h4> Gift Ideas For: </h4></dh>
 
   <% @user.receivers.each do |receiver| %>
     <div class="list-group-item col-sm-3"><%= link_to receiver.first_name, receiver_path(receiver)%></div>
   <% end %>
+</div>
+
+<div class= "padding">
+  <%= link_to 'Create New Receiver', new_receiver_path, :class => "btn btn-warning btn-md"  %>
 </div>
 
 <div class = 'btn-group'>

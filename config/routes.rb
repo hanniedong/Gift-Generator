@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#login'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#logout'
+  post '/generate' => 'generator#generate'
 
 
   root to: 'index#index'

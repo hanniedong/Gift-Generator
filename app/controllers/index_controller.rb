@@ -9,8 +9,4 @@ class IndexController < ApplicationController
     end 
   end 
 
-  def show 
-    if logged_in?
-    end
-  end
 end
