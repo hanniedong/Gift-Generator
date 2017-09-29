@@ -6,12 +6,12 @@ class GiftsController < ApplicationController
   end 
 
   def create
-    @gift = Gift.new(gift_params)
+    @receiver = Receiver.find(params[:receiver_id])
+    @gift = @receiver.gifts.create(gift_params)
     if @gift.save
       redirect_to index_index_path
     else 
-      @errors
-      render 'new'
+      redirect_to index_index_path
     end
   end 
 
@@ -20,4 +20,5 @@ class GiftsController < ApplicationController
   def gift_params
     params.require(:gift).permit(:title, :description, :link, :giver_id, :receiver_id)
   end 
+
 end

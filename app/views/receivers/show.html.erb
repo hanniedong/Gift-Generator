@@ -2,20 +2,19 @@
   <h2> Gift Ideas for  <%= @receiver.first_name %> </h2>
 </div>
 
-  <%= link_to 'New Gift Idea', new_receiver_gift_path(:receiver_id => @receiver.id), :class => "btn btn-warning btn-lg"  %> <br> <br>
+  <%= link_to 'New Gift Idea', new_receiver_gift_path(:receiver_id => @receiver.id), :class => "btn btn-warning btn-md"  %> <br> <br>
 
 <ul class="list-group">
   <% @gifts.each do |gift| %>
     <li class="list-group-item">
-      <h3> <%= gift.title %> </h3>
-      <h4> Cost: $<%= gift.cost %> </h4> 
-      <h4> Description: <%= gift.description %> </h4>
-      <h4> <%= link_to "link", gift.link %> </h4>
+      <h4> <%= gift.title %> </h4>
+      <p> Cost: $<%= gift.cost %> </p> 
+      <p> Description: <%= gift.description %> </p>
+      <p> <%= link_to "link", gift.link %> </p>
     </li>
   <% end %>
 </ul>
 
-
 <div class = 'btn-group'>
-  <%= link_to 'Back', root_path, :class => "btn btn-warning btn-lg"  %>
+  <%= link_to 'Back', root_path, :class => "btn btn-primary"  %>
 </div>
