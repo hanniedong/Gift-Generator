@@ -8,6 +8,7 @@ end
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form'
+gem "nested_form"
 
 gem 'faker'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
